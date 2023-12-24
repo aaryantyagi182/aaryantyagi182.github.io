@@ -1,0 +1,7 @@
+C (Intermediate) | https://www.hackerrank.com/certificates/f089e3f4b4fe | images/C_Intermediate.png
+Python (Basic) | https://www.hackerrank.com/certificates/e7166c2663bb | images/python_basic.png
+C++ (Basic) | https://www.hackerrank.com/certificates/020bed044c6a | images/C++_Basic.png
+C (Basics) | https://www.hackerrank.com/certificates/1d17ae9ee9e4 | images/C_Basics.png
+Sapio Analytics Internship | https://drive.google.com/file/d/1CA6C7tJaUv4u6c5S7MOwGxP3gcFu9gsu/view?usp=sharing | images/Sapio_Intern.png
+Applied Data Science with Python | https://drive.google.com/file/d/17hvApc5iWtOmDPqtwdeQ2b7xZ5tN_hXu/view?usp=sharing | images/Applied_Data_Science_with_Python.png
+KPMG Virtual Internship | https://drive.google.com/file/d/1X1RlcwMmDLmSAjiQUcNQiJdXigkuwpwG/view?usp=sharing | images/KPMG_Virtual_Internship.png
