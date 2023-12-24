@@ -1,5 +1,3 @@
-# My Portfolio - Personal Website
-
 I have 2 years of total engineering experience. I have honed my expertise in Python, MySQL, PostgreSQL, Distributed System, AWS, Kubernetes, Docker-based system, Django, Elasticsearch and Kafka. I am skilled in B2B and B2C problem solving and optimization.
 
 
