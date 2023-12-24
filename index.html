@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aaryan Tyagi</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <style>
+        .button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+        .button:hover {
+            background-color: #e2f76d
+        }
+
+        .button:active {
+            background-color: #e2f76d;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        .topmate {
+            background-color: rgb(234, 97, 97);
+        }
+
+        .preplaced {
+            background-color: rgb(121, 241, 121)
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mobile-menu-open" class="shadow-large">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <!-- End #mobile-menu-toggle -->
+    <header>
+        <div id="mobile-menu-close">
+            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <ul id="menu" class="shadow">
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+            <li>
+                <a href="#education">Education</a>
+            </li>
+            <li>
+                <a href=".certifications">Certifications</a>
+            </li>
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+            <li>
+                <a href=".Programming">Programming Profiles</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </header>
+    <!-- End header -->
+
+    <div id="lead">
+        <div id="lead-content">
+            <table>
+                <tr>
+                    <td>
+                        <img style="border-radius: 50%;width: 200px;height: 200px;"
+                            src="https://avatars.githubusercontent.com/u/42247648?v=4"></img>
+                    </td>
+                    <td>
+                        <h1 id="name">
+                        </h1>
+                        <h2 id="bio"></h2>
+                        <a target="_blank"
+                            href="https://github.com/aaryantyagi182/aaryantyagi182.github.io/raw/main/AaryanTyagi_Resume.pdf"
+                            class="btn-rounded-white">Download Resume</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script>
+            let urlMain = 'https://api.github.com/users/aaryantyagi182';
+            var wordArray = [];
+            fetch(urlMain)
+                .then(res => res.json())
+                .then((out) => {
+                    for (item in out) {
+                        if (item == "name") {
+                            $('h1#name').text(out[item]);
+                        }
+                        if (item == "bio") {
+                            wordArray = out[item].split('|');
+                        }
+                    }
+                })
+                .catch(err => {
+                    $('h1#name').text('Aaryan Tyagi');
+                    $('h2#bio').text('Software Engineer');
+                });
+
+            var blink_speed = 1000;
+
+            var count = 0;
+            var t = setInterval(function () {
+
+                $('h2#bio').text(wordArray[count++]);
+
+                if (count === wordArray.length)
+                    count = 0;
+
+            }, blink_speed);
+
+
+        </script>
+        <!-- End #lead-content -->
+
+        <div id="lead-overlay"></div>
+
+        <div id="lead-down">
+            <span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </span>
+        </div>
+        <!-- End #lead-down -->
+    </div>
+    <!-- End #lead -->
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="heading">About Me</h2>
+                </div>
+                <script>
+
+                    let repoURL = 'https://api.github.com/repos/aaryantyagi182/aaryantyagi182.github.io/readme';
+
+                    fetch(repoURL)
+                        .then(res => res.json())
+                        .then((out) => {
+                            var div = '<div class="col-md-8"> <p>';
+                            var content = atob(out['content']);
+                            var header = content.substring(0, content.indexOf('SKILLS'));
+                            div += header;
+                            $('#about .col-md-4').after(div + '</p></div>');
+                        })
+                        .catch(err => {
+                            console.log('Software Engineer');
+                        });
+
+
+
+                </script>
+            </div>
+        </div>
+    </div>
+    <!-- End #about -->
+
+    <div id="experience" class="background-alt">
+        <h2 class="heading">Experience</h2>
+        <div id="experience-timeline">
+
+            <div data-date="January 2023 - Present Day" id="days">
+                <h3>Happay acquired by CRED, Bengaluru(India) </h3>
+                <h4>Software Development Engineer 1</h4>
+                <p>
+                    Working on Happay Expense Products.
+                </p>
+            </div>
+            <div data-date="November 2021 - December 2022" id="days">
+                <h3>Park+, Bengaluru(India)</h3>
+                <h4>Software Development Enginner 1</h4>
+                <p>
+                    Worked as a Backend Developer on Park+ Vehical, Payment and Recon Products.
+                </p>
+            </div>
+
+            <div data-date="May 2021 - August 2021" id="days">
+                <h3>Waxwings AI</h3>
+                <h4>Software Developer Intern</h4>
+                <p>
+                    Internship.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var experience = [];
+        experience.push({ from: "Jan 02, 2023 00:00:00", to: new Date(), text: "January 2023 - Present Day <br/>(" });
+        experience.push({ from: "Nov 19, 2021 00:00:00", to: "Dec 30, 2022 00:00:00", text: "November 2021 - December 2022 <br/>(" });
+        experience.push({ from: "May 30, 2021 00:00:00", to: "August 30, 2021 00:00:00", text: "May 2021 - August 2021 <br/>(" });
+        var timeline = document.getElementById("experience-timeline").children;
+        for (counter = 0; counter < timeline.length; counter++) {
+            if (experience[counter]) {
+                let currentNode = timeline[counter];
+                var from = new Date(experience[counter].from).getTime();
+                var to = new Date(experience[counter].to).getTime();
+                console.log(from, to);
+                var timeleft = to - from;
+                var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+                var years = (Math.floor(days / 365));
+                var months = Math.round(Math.round(days % 365) / 31);
+                currentNode.setAttribute("data-date", experience[counter].text + years + "." + months + " Years )");
+            }
+        }
+    </script>
+    <!-- End #experience -->
+
+    <div id="education">
+        <h2 class="heading">Education</h2>
+        <div class="education-block">
+            <h3>Jaypee Institute of Information Technology, Noida(India)</h3>
+            <span class="education-date">May 2018 - June 2022</span>
+            <h4>Bachelor of Engineering in Computer Science</h4>
+            <p>
+            </p>
+        </div>
+        <!-- End .education-block -->
+    </div>
+    <!-- End #education -->
+
+    <div id="education" class="certifications">
+        <h2 class="heading">Certifications</h2>
+        <div class="certification-block">
+        </div>
+        <script>
+            var master = 'https://api.github.com/repos/aaryantyagi182/aaryantyagi182.github.io/git/trees/main';
+
+            fetch(master)
+                .then(res => res.json())
+                .then((out) => {
+                    var tree = out['tree'];
+                    var url = null;
+                    for (var i = 0; i < tree.length; i++) {
+                        var item = tree[i];
+                        if (item['path'].indexOf('certification') != -1) {
+                            url = item['url'];
+                            break;
+                        }
+                    }
+
+                    if (url != null) {
+                        fetch(url)
+                            .then(res => res.json())
+                            .then((out) => {
+                                var content = atob(out['content']);
+                                var items = content.split('\n');
+
+                                items.forEach(item => {
+                                    if (item != null && item.trim() != '') {
+                                        var con = item.split("|");
+                                        var a = '<a target="_blank" href = "' + con[1].trim() + '"> <img src="' + con[2].trim() + '" title = "' + con[0].trim() + '" width="100" height="100" /></a>';
+                                        $('.certification-block').after(a);
+                                    }
+                                });
+                            }).catch(err => {
+                                console.log('Error while loading certifications ' + err);
+                            });
+                    }
+
+                })
+                .catch(err => {
+                    console.log('Error while finding certifications ' + err);
+                });
+
+
+        </script>
+
+        <!-- End .certifications-block -->
+    </div>
+    <!-- End #certifications -->
+
+    <div id="projects" class="background-alt">
+        <h2 class="heading">Projects</h2>
+        <div class="container">
+            <div id="projects" class="row">
+
+                <div class="project shadow-large">
+                    <!-- <div class="project-image">
+                        <img src="images/covid19.png" />
+                    </div> -->
+                    <!-- End .project-image -->
+                    <div>
+                        <h3>Inventory Management System</h3>
+                        <p>
+                            A Website Designed using Django Framework and MySQL Database for Inventory Management.
+                        </p>
+                        <a target="_blank" href="">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+
+                <div class="project shadow-large">
+                    <!-- <div class="project-image">
+                        <img src="images/Image_caption_generator.png" />
+                    </div> -->
+                    <!-- End .project-image -->
+                    <div>
+                        <h3>Image Caption Generator</h3>
+                        <p>
+                            Website generating captions using the context of images using deep learning models. Used Technologies like Convolutional Neural Network (CNN),
+                            Long Short Term Memory(LSTM) and Natural Language Processing(NLP). Large data set has been processed by CNN and LSTM model to learn and
+                            then identifying objects in the images with high accuracy then NLP is used to generate the sentence using those words.
+                        </p>
+                        <a target="_blank" href="https://github.com/aaryantyagi182/Image-Caption-Generator">View
+                            Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <!-- <div class="project-image">
+                        <img src="images/Covid_19.png" />
+                    </div> -->
+                    <!-- End .project-image -->
+                    <div>
+                        <h3>Covid-19 Website</h3>
+                        <p>
+                            A Live Monitoring website to see the statistics of Covid 19 around world.
+                        </p>
+                        <a target="_blank"
+                            href="https://github.com/aaryantyagi182/Live-monitoring-of-Covid-19">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+
+                <h3><a target="_blank" href="https://github.com/aaryantyagi182">More Projects</a></h2>
+
+                    <script>
+                        let projURL = 'https://api.github.com/users/aaryantyagi182/repos?sort=createdDate&per_page=100';
+                        fetch(projURL)
+                            .then(res => res.json())
+                            .then((out) => {
+
+                                var div = '<div class="cards" > ';
+                                var projects = {};
+
+                                for (item in out) {
+                                    if (out[item].has_wiki == true) {
+                                        out[item].name = out[item].name.replaceAll('-', ' ');
+                                        if (out[item].description == null) {
+                                            out[item].description = "";
+                                        }
+                                        if (projects[out[item].language] === undefined) {
+                                            projects[out[item].language] = [];
+                                        }
+                                        projects[out[item].language].push(out[item]);
+                                    }
+                                }
+
+                                for (var key in projects) {
+                                    var heading = key;
+                                    if (heading == "null") {
+                                        heading = "Python";
+                                    }
+                                    var parentDiv = '<div><h3>' + heading + '</h3>';
+                                    for (var i = 0; i < projects[key].length; i++) {
+                                        var item = projects[key][i];
+                                        var node = '<div class="card"><a target="_blank" href="' + item.html_url + '">' + item.name + '</a></div>';
+                                        parentDiv += node;
+                                    }
+                                    div += parentDiv + '</div>';
+                                }
+
+                                $('#projects .row').after(div + '</div>');
+
+                            })
+                            .catch(err => {
+
+                                console.log('Error while adding dynamic projects', err);
+                            });
+
+
+                    </script>
+
+            </div>
+        </div>
+    </div>
+    <!-- End #projects -->
+
+    <div id="skills" class="skills">
+        <h2 class="heading">Skills</h2>
+
+        <script>
+
+            repoURL2 = 'https://api.github.com/repos/aaryantyagi182/aaryantyagi182.github.io/readme';
+
+            fetch(repoURL2)
+                .then(res => res.json())
+                .then((out) => {
+                    var div = '<div> ';
+                    var content = atob(out['content']);
+                    var header = content.substring(content.indexOf('SKILLS') + 6);
+                    div += header;
+                    $('.skills .heading').after(div);
+                })
+                .catch(err => {
+                    console.log('Software Engineer');
+                });
+
+
+
+        </script>
+
+
+    </div>
+    <!-- End #skills -->
+    <div id="skills" class="Programming">
+        <h2 class="heading">Programming Platform Profile</h2>
+        <ul>
+            <li><a target="_blank" href="https://leetcode.com/aaryan_444/">LeetCode</a></li>
+            <li><a target="_blank" href="https://www.codechef.com/users/aaryan_444">CodeChef</a></li>
+            <br />
+            <li><a target="_blank" href="https://www.hackerrank.com/profile/aatyagi293">HackerRank</a></li>
+            <br />
+            <li><a target="_blank" href="https://auth.geeksforgeeks.org/user/aaryantyagi/?utm_source=geeksforgeeks&utm_medium=my_profile&utm_campaign=auth_user">Geekforgeeks</a></li>
+
+        </ul>
+    </div>
+
+
+    <!-- End #skills -->
+
+    <div id="contact">
+        <h2>Get in Touch</h2>
+        <div id="web-profiles">
+
+            </br>
+        </div>
+        <div id="contact-form">
+            <form method="POST" action="https://formspree.io/aatyagi293@gmail.com">
+                <input type="hidden" name="_subject" value="Contact request from aaryantyagi182.github.io" />
+                <input type="email" name="_replyto" placeholder="Your email" required>
+                <textarea name="message" placeholder="Your message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <!-- End #contact-form -->
+    </div>
+    <!-- End #contact -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="social">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/aaryantyagi182" target="_blank"><i class="fa fa-github"
+                                    aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/aaryan-tyagi-98785a176/" target="_blank"><i
+                                    class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/_aaryan_tyagi/" target="_blank"><i class="fa fa-instagram"
+                                    aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/aaryan.tyagi.754/" target="_blank"><i
+                                    class="fa fa-facebook" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="top">
+                    <span id="to-top">
+                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End footer -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/scripts.min.js"></script>
+</body>
+
+</html>
