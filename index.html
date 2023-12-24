@@ -355,7 +355,7 @@
                 <h3><a target="_blank" href="https://github.com/aaryantyagi182">More Projects</a></h2>
 
                     <script>
-                        let projURL = 'https://api.github.com/users/aaryantyagi182/repos?sort=createdDate&per_page=100';
+                        let projURL = 'https://api.github.com/users/aaryantyagi182/repos?sort=createdDate&per_page=20';
                         fetch(projURL)
                             .then(res => res.json())
                             .then((out) => {
@@ -378,19 +378,26 @@
 
                                 for (var key in projects) {
                                     var heading = key;
-                                    if (heading == "null") {
+                                    if (heading == "null" || heading == "Jupyter Notebook") {
                                         heading = "Python";
                                     }
                                     var parentDiv = '<div><h3>' + heading + '</h3>';
                                     for (var i = 0; i < projects[key].length; i++) {
                                         var item = projects[key][i];
                                         var node = '<div class="card"><a target="_blank" href="' + item.html_url + '">' + item.name + '</a></div>';
+                                        if(heading == "Python") {
+                                            pythonParentDiv +=node;
+                                        }
+                                        else{
                                         parentDiv += node;
+                                        }
                                     }
-                                    div += parentDiv + '</div>';
+                                    if(heading != "Python") {
+                                        div += parentDiv + '</div>';
+                                    }
                                 }
-
-                                $('#projects .row').after(div + '</div>');
+                                final_div = pythonParentDiv + '</div>' + div;
+                                $('#projects .row').after(final_div + '</div>');
 
                             })
                             .catch(err => {
