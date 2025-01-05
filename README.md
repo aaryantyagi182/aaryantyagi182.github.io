@@ -1,4 +1,4 @@
-I have 2 years of total engineering experience. I have honed my expertise in Python, MySQL, PostgreSQL, Distributed System, AWS, Kubernetes, Docker-based system, Django, Elasticsearch and Kafka. I am skilled in B2B and B2C problem solving and optimization.
+I have around 3 years of total engineering experience. I have honed my expertise in Python, MySQL, PostgreSQL, Distributed System, AWS, Kubernetes, Docker-based system, Django, Elasticsearch and Kafka. I am skilled in B2B and B2C problem solving and optimization.
 
 
 SKILLS
@@ -8,6 +8,7 @@ SKILLS
 			<li>Django</li>
 			<li>SQL</li>
 			<li>PostgreSQL</li>
+	                <li>AWS<li>
 			<li>Elasticsearch</li>
       <li>Kafka</li>
       <li>MongoDB</li>
