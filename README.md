@@ -8,7 +8,7 @@ SKILLS
 			<li>Django</li>
 			<li>SQL</li>
 			<li>PostgreSQL</li>
-	                <li>AWS<li>
+	                <li>AWS</li>
 			<li>Elasticsearch</li>
       <li>Kafka</li>
       <li>MongoDB</li>
@@ -20,7 +20,6 @@ SKILLS
 			<li>JSON</li>
 			<br/>
 			<li>Docker</li>
-			<li>AWS</li>
 			<li>Basg Scripting</li>
 			<li>Kubernetes</li>
 			<br/>
