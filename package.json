@@ -14,8 +14,8 @@
     "coding",
     "dev"
   ],
-  "author": "Ryan Fitzgerald",
-  "license": "MIT",
+  "author": "Aaryan Tyagi",
+  "license": "JIIT",
   "devDependencies": {
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
