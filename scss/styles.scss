@@ -90,10 +90,8 @@ body {
     font-size: 16px;
 
     &.active {
-        overflow-y: hidden;   // Only restrict vertical scroll when needed
-        overflow-x: hidden;   // Prevent horizontal scroll
-        position: relative;
-        z-index: auto; 
+        overflow: hidden;
+        z-index: -1;
     }
 }
 
