@@ -84,6 +84,13 @@ $text: #74808a;
     ----------------------------
 */
 
+html, body {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 body {
     font-family: 'Lato', sans-serif;
     font-size: 16px;
